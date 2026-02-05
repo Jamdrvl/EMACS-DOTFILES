@@ -1,0 +1,3 @@
+This is my EMACS dotfiles. I've already implemented some minor QOL changes and overall experience improvement.
+I plan on concatenating this project with another one, general-use dotfiles attached to an auto-setup script for
+my themes, browser config and etc...
