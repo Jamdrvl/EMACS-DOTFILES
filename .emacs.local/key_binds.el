@@ -1,0 +1,20 @@
+;;SMEX - AUTOCOMPLETE
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;; Multiple cursors - MULTIPLOS CURSORES
+
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-\"") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-:") 'mc/skip-to-previous-like-this)
+
+;;Rc para duplicar linha (Tsoding)
+
+(global-set-key (kbd "C-,") 'rc/duplicate-line)
+
+;;Require
+(provide 'key_binds)
