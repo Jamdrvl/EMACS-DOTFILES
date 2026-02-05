@@ -10,8 +10,6 @@
 
 ;;Default visual/QOL options
 (global-display-line-numbers-mode 1)
-(ido-mode 1)
-(ido-everywhere 1)
 (setq visible-bell t)
 (rc/require-theme 'gruber-darker)
 
@@ -33,9 +31,7 @@
 (require 'simpc-mode)
 (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
-;; Alt X autocomplete
-(rc/require 'smex)
-;; Multiplos Cursores
+;; Multiple cursors
 (rc/require 'multiple-cursors)
 
 ;;Tsoding function for duplicating lines
@@ -51,5 +47,36 @@
     (move-beginning-of-line 1)
     (forward-char column)))
 
+
+;; Importing vertico for pretty listing
+(rc/require 'vertico)
+(vertico-mode 1)
+
+;; Importing marginalia for function descriptions
+(rc/require 'marginalia)
+(marginalia-mode 1)
+
+;; Importing an autocomplete module
+(rc/require 'corfu)
+(global-corfu-mode 1)
+(define-key corfu-map (kbd "TAB") #'corfu-complete)
+(define-key corfu-map (kbd "<tab>") #'corfu-complete)
+(setq corfu-auto t)
+(setq corfu-auto-delay 0.2)
+(setq corfu-auto-prefix 1)
+
+;; Improves the search for functions
+(rc/require 'orderless)
+(setq completion-styles '(orderless basic))
+(setq completion-category-defaults nil)
+(setq completion-category-overrides '((file (styles partial-completion))))
+
+;;Complements autocomplete
+(rc/require 'cape)
+(add-to-list 'completion-at-point-functions #'cape-dabbrev)
+(add-to-list 'completion-at-point-functions #'cape-file)
+(add-to-list 'completion-at-point-functions #'cape-elisp-block)
+
 ;;Importing all of my custom keybinds
 (require 'key_binds)		
+

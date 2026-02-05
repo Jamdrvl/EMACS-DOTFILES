@@ -1,8 +1,3 @@
-;;SMEX - AUTOCOMPLETE
-
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
 ;; Multiple cursors - MULTIPLOS CURSORES
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)

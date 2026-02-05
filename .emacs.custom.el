@@ -9,6 +9,7 @@
      default))
  '(display-line-numbers-type 'relative)
  '(inhibit-startup-screen t)
+ '(package-selected-packages nil)
  '(warning-minimum-level :error))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
