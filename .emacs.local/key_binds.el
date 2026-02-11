@@ -11,5 +11,10 @@
 
 (global-set-key (kbd "C-,") 'rc/duplicate-line)
 
+;;Abre o terminal rápido
+
+(global-set-key (kbd "C-c v") 'multi-vterm)
+
 ;;Require
 (provide 'key_binds)
+

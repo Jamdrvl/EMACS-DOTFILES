@@ -77,6 +77,28 @@
 (add-to-list 'completion-at-point-functions #'cape-file)
 (add-to-list 'completion-at-point-functions #'cape-elisp-block)
 
+;;Better terminal
+(rc/require 'vterm)
+
+
+;; LSP Support (Eglot) + Ty from Astral
+(rc/require 'eglot)
+(with-eval-after-load 'eglot
+  ;; Registers 'ty' as the standard Python server
+  (add-to-list 'eglot-server-programs
+               '((python-mode python-ts-mode) . ("ty" "server"))))
+
+(rc/require 'ruff-format)
+
+(defun rc/python-setup ()
+  "Configurações para o ambiente Python da Astral."
+  (eglot-ensure)             
+  (ruff-format-on-save-mode) 
+  (setq-local tab-width 4))  
+
+(add-hook 'python-mode-hook #'rc/python-setup)
+(add-hook 'python-ts-mode-hook #'rc/python-setup)
+
 ;;Importing all of my custom keybinds
 (require 'key_binds)		
 
